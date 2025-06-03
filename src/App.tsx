@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Paper, Grid, Divider, Fade, useScrollTrigger } from '@mui/material'
+import { Box, Container, Typography, Paper, Grid, Divider } from '@mui/material'
 import { AgricultureDecline } from './components/AgricultureDecline'
 import { LandUsage } from './components/LandUsage'
 import { WorkforceStats } from './components/WorkforceStats'

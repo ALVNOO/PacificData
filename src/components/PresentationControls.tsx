@@ -15,18 +15,15 @@ export const PresentationControls: React.FC<PresentationControlsProps> = ({
   totalSections,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [currentSection, setCurrentSection] = useState(0)
+  const [currentSection] = useState(0)
 
   useEffect(() => {
     let interval: NodeJS.Timeout
 
     if (isPlaying) {
       interval = setInterval(() => {
-        setCurrentSection((prev) => {
-          const next = (prev + 1) % totalSections
-          onSectionChange(next)
-          return next
-        })
+        const next = (currentSection + 1) % totalSections
+        onSectionChange(next)
       }, 5000) // Change section every 5 seconds
     }
 
@@ -35,14 +32,13 @@ export const PresentationControls: React.FC<PresentationControlsProps> = ({
         clearInterval(interval)
       }
     }
-  }, [isPlaying, totalSections, onSectionChange])
+  }, [isPlaying, totalSections, onSectionChange, currentSection])
 
   const handlePlay = () => {
     setIsPlaying(!isPlaying)
   }
 
   const handleRestart = () => {
-    setCurrentSection(0)
     onSectionChange(0)
     setIsPlaying(false)
   }

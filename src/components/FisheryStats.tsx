@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Paper, Typography, Grid, Tabs, Tab, Box } from '@mui/material'
+import { Paper, Typography, Tabs, Tab, Box } from '@mui/material'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts'
 
 interface FishingMethod {
@@ -71,7 +71,7 @@ export const FisheryStats: React.FC = () => {
   const [tabValue, setTabValue] = useState(0)
   const [hoveredBar, setHoveredBar] = useState<string | null>(null)
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue)
   }
 

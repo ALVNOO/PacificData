@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Paper, Typography, Button, ButtonGroup, Fade } from '@mui/material'
+import { Paper, Typography, Button, ButtonGroup } from '@mui/material'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
 const fullData = [

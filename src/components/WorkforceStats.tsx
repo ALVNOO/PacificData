@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Paper, Typography, Grid, IconButton, Collapse, Box } from '@mui/material'
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import InfoIcon from '@mui/icons-material/Info'
 
 const genderData = [
@@ -75,7 +75,7 @@ export const WorkforceStats: React.FC = () => {
                 onMouseLeave={() => onPieLeave('gender')}
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
               >
-                {genderData.map((entry, index) => (
+                {genderData.map((_, index) => (
                   <Cell 
                     key={`cell-${index}`} 
                     fill={COLORS[index % COLORS.length]}
@@ -112,7 +112,7 @@ export const WorkforceStats: React.FC = () => {
                 onMouseLeave={() => onPieLeave('age')}
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
               >
-                {ageData.map((entry, index) => (
+                {ageData.map((_, index) => (
                   <Cell 
                     key={`cell-${index}`} 
                     fill={COLORS[index % COLORS.length]}

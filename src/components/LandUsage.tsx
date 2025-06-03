@@ -42,7 +42,7 @@ export const LandUsage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | undefined>()
   const [selectedSegment, setSelectedSegment] = useState<number | undefined>()
 
-  const handleMouseEnter = (data: any, index: number) => {
+  const handleMouseEnter = (_: any, index: number) => {
     setActiveIndex(index)
   }
 
@@ -50,7 +50,7 @@ export const LandUsage: React.FC = () => {
     setActiveIndex(undefined)
   }
 
-  const handleClick = (data: any, index: number) => {
+  const handleClick = (_: any, index: number) => {
     setSelectedSegment(selectedSegment === index ? undefined : index)
   }
 
@@ -86,7 +86,7 @@ export const LandUsage: React.FC = () => {
             onClick={handleClick}
             label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell 
                 key={`cell-${index}`} 
                 fill={COLORS[index % COLORS.length]}
